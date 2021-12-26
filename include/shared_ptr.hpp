@@ -33,8 +33,8 @@ class SharedPtr {
   // возвращает количество объектов SharedPtr,
   // которые ссылаются на тот же управляемый объект
   auto use_count() const -> size_t;
-
 };
+
 // конструктор по умолчанию
 template <typename T>
 SharedPtr<T>::SharedPtr()
