@@ -11,6 +11,7 @@ class SharedPtr {
   private:
   T *_ptr;
   std::atomic_uint *_count_ptr;
+
  public:
   SharedPtr();
   explicit SharedPtr(T* ptr);
@@ -32,7 +33,6 @@ class SharedPtr {
   // возвращает количество объектов SharedPtr,
   // которые ссылаются на тот же управляемый объект
   auto use_count() const -> size_t;
-
 
 };
 // конструктор по умолчанию
@@ -143,7 +143,7 @@ void SharedPtr<T>::reset(T *ptr) {
   if (_count_ptr != nullptr) {
     --(*_count_ptr);
   }
-  _count_ptr = new std::atomic<uint>;
+  _count_ptr = new std::atomic<unsigned int>;
   *_count_ptr = 1;
   *_ptr = ptr;
 }
