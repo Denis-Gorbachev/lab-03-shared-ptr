@@ -1,5 +1,6 @@
-#include <example.hpp>
+#include <shared_ptr.hpp>
+#include <iostream>
 
 int main() {
-  example();
+  return 0;
 }
