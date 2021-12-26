@@ -99,8 +99,7 @@ void SharedPtr<T>::reset() {
     _ptr = nullptr;
     if (*_count_ptr != 1){
       --*_count_ptr;
-    }
-    else{
+    }else{
       delete _count_ptr;
     }
     _count_ptr = nullptr;
@@ -126,7 +125,8 @@ void SharedPtr<T>::swap(SharedPtr &r) {
   this->_count_ptr = std::move(tmp._count_ptr);
 }
 
-// возвращает количество объектов SharedPtr, которые ссылаются на тот же управляемый объект
+// возвращает количество объектов SharedPtr,
+// которые ссылаются на тот же управляемый объект
 template <typename T>
 auto SharedPtr<T>::use_count() const -> size_t {
   return *_count_ptr;
